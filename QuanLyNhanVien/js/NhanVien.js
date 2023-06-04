@@ -1,4 +1,4 @@
-function nhanVien(
+function NhanVien(
     _taiKhoan,
     _hoTen,
     _email,

@@ -13,7 +13,7 @@ function renderGiaoDien() {
     Object.assign(nhanVien, nhanVienItem);
     var tongLuong = nhanVien.tongLuong();
     var xepLoai = nhanVien.xepLoai();
-    content += "\n        <tr>\n            <td>".concat(nhanVien.taiKhoan, "</td>\n            <td>").concat(nhanVien.hoTen, "</td>\n            <td>").concat(nhanVien.email, "</td>\n            <td>").concat(nhanVien.ngayLam, "</td>\n            <td>").concat(nhanVien.chucVu, "</td>\n            <td>").concat(tongLuong, "</td>\n            <td>").concat(xepLoai, "</td>\n            </tr>\n        ");
+    content += "\n        <tr>\n            <td>".concat(nhanVien.taiKhoan, "</td>\n            <td>").concat(nhanVien.hoTen, "</td>\n            <td>").concat(nhanVien.email, "</td>\n            <td>").concat(nhanVien.ngayLam, "</td>\n            <td>").concat(nhanVien.chucVu, "</td>\n            <td>").concat(tongLuong, "</td>\n            <td>").concat(xepLoai, "</td>\n            <td>\n                <button onclick=\"xoaNhanVien('").concat(nhanVien.taiKhoan, "')\" class=\"btn btn-danger m-1\">\n                  Xo\xE1 nh\xE2n vi\xEAn\n                </button>\n                <button onclick=\"editNhanVien('").concat(nhanVien.taiKhoan, "')\" class=\"btn btn-warning m-1\">\n                  Ch\u1EC9nh s\u1EEDa Nh\xE2n Vi\xEAn\n                </button>\n              </td>\n            </tr>\n        ");
   }
 
   document.getElementById("tableDanhSach").innerHTML = content;
@@ -32,7 +32,7 @@ function themNhanVien() {
 
 document.getElementById("btnThemNV").onclick = themNhanVien;
 
-function xoaSinhVien(taiKhoan) {
+function xoaNhanVien(taiKhoan) {
   var index = viTriNhanVien(taiKhoan);
 
   if (index != -1) {

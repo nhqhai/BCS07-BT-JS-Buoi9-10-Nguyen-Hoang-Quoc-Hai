@@ -55,7 +55,8 @@ function layInput(){
         return;
       }
 
-    var nhanVien = new NhanVien(_taiKhoan,
+    var nhanVien = new NhanVien(
+    _taiKhoan,
     _hoTen,
     _email,
     _matKhau,

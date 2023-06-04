@@ -22,6 +22,18 @@ function renderGiaoDien () {
             <td>${nhanVien.chucVu}</td>
             <td>${tongLuong}</td>
             <td>${xepLoai}</td>
+            <td>
+                <button onclick="xoaNhanVien('${
+                  nhanVien.taiKhoan
+                }')" class="btn btn-danger m-1">
+                  Xoá nhân viên
+                </button>
+                <button onclick="editNhanVien('${
+                  nhanVien.taiKhoan
+                }')" class="btn btn-warning m-1">
+                  Chỉnh sửa Nhân Viên
+                </button>
+              </td>
             </tr>
         `;
     }
@@ -39,7 +51,7 @@ function themNhanVien(){
 }
 document.getElementById("btnThemNV").onclick = themNhanVien;
 
-function xoaSinhVien(taiKhoan) {
+function xoaNhanVien(taiKhoan) {
     var index = viTriNhanVien(taiKhoan);
     if (index != -1) {
       arrNhanVien.splice(index, 1);
