@@ -3,6 +3,7 @@
 var arrNhanVien = [];
 getStorage();
 renderGiaoDien();
+var banGoc;
 
 function renderGiaoDien() {
   var content = "";
@@ -55,13 +56,8 @@ function editNhanVien(taiKhoan) {
   }
 
   document.getElementById("header-title").onclick = changeTitle();
-
-  function openModal() {
-    var modal = document.getElementById("myModal");
-    modal.style.display = "block";
-  }
-
-  document.querySelector(".btn-warning").onclick = openModal;
+  $('#myModal').modal('show');
+  document.getElementById("btnCapNhat").style.display = "block";
 }
 
 ;
@@ -72,6 +68,14 @@ function capNhatThongTinNhanVien() {
   arrNhanVien[index] = nhanVienDaChinhSua;
   saveStorage(arrNhanVien);
   renderGiaoDien();
+  $('#myModal').modal('hide');
 }
 
+;
 document.getElementById("btnCapNhat").onclick = capNhatThongTinNhanVien;
+$(document).ready(function () {
+  banGoc = $('#myModal .modal-content').html();
+  $('#myModal').on('hidden.bs.modal', function () {
+    $('#myModal .modal-content').html(banGoc);
+  });
+});

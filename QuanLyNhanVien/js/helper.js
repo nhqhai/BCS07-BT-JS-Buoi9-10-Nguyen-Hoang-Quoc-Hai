@@ -42,7 +42,7 @@ function layInput(){
     valid =
         kiemTraRong(_taiKhoan, "btnThemNV") &
         kiemTraRong(_hoTen,"btnThemNV") &
-        kiemTraRong(_email,"tbEmail") &
+        kiemTraRong(_email,"btnThemNV") &
         kiemTraRong(_matKhau,"btnThemNV") &
         kiemTraRong(_luongCoBan,"btnThemNV") &
         kiemTraRong(_chucVu,"btnThemNV") &

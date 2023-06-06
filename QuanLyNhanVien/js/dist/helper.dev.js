@@ -35,7 +35,7 @@ function layInput() {
   var _gioLam = document.getElementById("gioLam").value * 1;
 
   var valid = true;
-  valid = kiemTraRong(_taiKhoan, "btnThemNV") & kiemTraRong(_hoTen, "btnThemNV") & kiemTraRong(_email, "tbEmail") & kiemTraRong(_matKhau, "btnThemNV") & kiemTraRong(_luongCoBan, "btnThemNV") & kiemTraRong(_chucVu, "btnThemNV") & kiemTraRong(_gioLam, "btnThemNV");
+  valid = kiemTraRong(_taiKhoan, "btnThemNV") & kiemTraRong(_hoTen, "btnThemNV") & kiemTraRong(_email, "btnThemNV") & kiemTraRong(_matKhau, "btnThemNV") & kiemTraRong(_luongCoBan, "btnThemNV") & kiemTraRong(_chucVu, "btnThemNV") & kiemTraRong(_gioLam, "btnThemNV");
   valid &= kiemTraEmail(_email, "btnThemNV");
 
   if (!valid) {
