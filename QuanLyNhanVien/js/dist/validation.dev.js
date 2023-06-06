@@ -5,7 +5,7 @@ function kiemTraRong(checkInput, idThongBao) {
     document.getElementById(idThongBao).innerHTML = "";
     return true;
   } else {
-    document.getElementById(idThongBao).innerHTML = "Không được để trống ô dữ liệu này";
+    document.getElementById(idThongBao).innerHTML = "Không được để trống các ô";
     return false;
   }
 }
@@ -18,7 +18,7 @@ function kiemTraEmail(checkInput, idThongBao) {
     document.getElementById(idThongBao).innerHTML = "";
     return true;
   } else {
-    document.getElementById(idThongBao).innerHTML = "Không bỏ trống và nhập đúng định dạng email (vd: hai@email.com)";
+    document.getElementById(idThongBao).innerHTML = "Email sai định dạng hoặc trống";
     return false;
   }
 }

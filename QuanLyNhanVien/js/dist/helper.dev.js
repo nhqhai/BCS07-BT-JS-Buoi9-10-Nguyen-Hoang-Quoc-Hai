@@ -5,7 +5,7 @@ function ganInput(taiKhoan, hoTen, email, matKhau, ngayLam, luongCoBan, chucVu, 
   document.getElementById("name").value = hoTen;
   document.getElementById("email").value = email;
   document.getElementById("password").value = matKhau;
-  document.getElementById("ngaylam").value = ngayLam;
+  document.getElementById("datepicker").value = ngayLam;
   document.getElementById("luongCB").value = luongCoBan;
   document.getElementById("chucvu").value = chucVu;
   document.getElementById("gioLam").value = gioLam;
@@ -14,7 +14,7 @@ function ganInput(taiKhoan, hoTen, email, matKhau, ngayLam, luongCoBan, chucVu, 
 function viTriNhanVien(taiKhoan) {
   var viTri = -1;
   arrNhanVien.forEach(function (item, index) {
-    if (item.taikhoan == taiKhoan) {
+    if (item.taiKhoan == taiKhoan) {
       viTri = index;
     }
   });
@@ -35,7 +35,7 @@ function layInput() {
   var _gioLam = document.getElementById("gioLam").value * 1;
 
   var valid = true;
-  valid = kiemTraRong(_taiKhoan, "btnThemNV") & kiemTraRong(_hoTen, "btnThemNV") & kiemTraRong(_email, "btnThemNV") & kiemTraRong(_matKhau, "btnThemNV") & kiemTraRong(_ngayLam, "btnThemNV") & kiemTraRong(_luongCoBan, "btnThemNV") & kiemTraRong(_chucVu, "btnThemNV") & kiemTraRong(_gioLam, "btnThemNV");
+  valid = kiemTraRong(_taiKhoan, "btnThemNV") & kiemTraRong(_hoTen, "btnThemNV") & kiemTraRong(_email, "tbEmail") & kiemTraRong(_matKhau, "btnThemNV") & kiemTraRong(_luongCoBan, "btnThemNV") & kiemTraRong(_chucVu, "btnThemNV") & kiemTraRong(_gioLam, "btnThemNV");
   valid &= kiemTraEmail(_email, "btnThemNV");
 
   if (!valid) {

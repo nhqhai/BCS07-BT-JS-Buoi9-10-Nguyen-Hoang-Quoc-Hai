@@ -12,7 +12,7 @@ function ganInput(
     document.getElementById("name").value = hoTen;
     document.getElementById("email").value = email;
     document.getElementById("password").value = matKhau;
-    document.getElementById("ngaylam").value = ngayLam;
+    document.getElementById("datepicker").value = ngayLam;
     document.getElementById("luongCB").value = luongCoBan;
     document.getElementById("chucvu").value = chucVu;
     document.getElementById("gioLam").value = gioLam;
@@ -21,7 +21,7 @@ function ganInput(
 function viTriNhanVien(taiKhoan){
     var viTri = -1;
     arrNhanVien.forEach(function(item, index){
-        if(item.taikhoan == taiKhoan) {
+        if(item.taiKhoan == taiKhoan) {
             viTri = index;
         }
     });
@@ -42,9 +42,8 @@ function layInput(){
     valid =
         kiemTraRong(_taiKhoan, "btnThemNV") &
         kiemTraRong(_hoTen,"btnThemNV") &
-        kiemTraRong(_email,"btnThemNV") &
+        kiemTraRong(_email,"tbEmail") &
         kiemTraRong(_matKhau,"btnThemNV") &
-        kiemTraRong(_ngayLam,"btnThemNV") &
         kiemTraRong(_luongCoBan,"btnThemNV") &
         kiemTraRong(_chucVu,"btnThemNV") &
         kiemTraRong(_gioLam,"btnThemNV");

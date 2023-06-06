@@ -25,14 +25,16 @@ function renderGiaoDien () {
             <td>
                 <button onclick="xoaNhanVien('${
                   nhanVien.taiKhoan
-                }')" class="btn btn-danger m-1">
-                  Xoá nhân viên
+                }')" class="btn btn-danger mb-2">
+                  Delete
                 </button>
+
                 <button onclick="editNhanVien('${
                   nhanVien.taiKhoan
-                }')" class="btn btn-warning m-1">
-                  Chỉnh sửa Nhân Viên
+                }')" class="btn btn-warning mb-2">
+                  Edit
                 </button>
+
               </td>
             </tr>
         `;
@@ -60,6 +62,7 @@ function xoaNhanVien(taiKhoan) {
     }
   }
 
+
 function editNhanVien(taiKhoan) {
   var index = viTriNhanVien(taiKhoan);
   var nhanVien = arrNhanVien[index];
@@ -74,7 +77,19 @@ function editNhanVien(taiKhoan) {
     nhanVien.gioLam,
   );
   document.getElementById("tknv").readOnly = true;
-}
+  document.getElementById("btnThemNV").style.display = 'none';
+  function changeTitle() {
+    var title = document.getElementById("header-title");
+    title.innerHTML = 'Sửa thông tin Nhân Viên';
+  }
+  document.getElementById("header-title").onclick = changeTitle();
+  function openModal() {
+    var modal = document.getElementById("myModal");
+    modal.style.display = "block";
+  }
+  document.querySelector(".btn-warning").onclick = openModal;
+};
+
 
 function capNhatThongTinNhanVien() {
     var nhanVienDaChinhSua = layInput();
@@ -84,3 +99,8 @@ function capNhatThongTinNhanVien() {
     renderGiaoDien();
 }
 document.getElementById("btnCapNhat").onclick = capNhatThongTinNhanVien;
+
+
+
+
+
